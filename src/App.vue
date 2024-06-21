@@ -1,6 +1,7 @@
 <template>
 <section class="home ">
       <!-- header -->
+       
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
@@ -14,10 +15,10 @@
             <div class="navbar-collapse collapse" id="navbarCollapse" style="">
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link nav-link-1 active" aria-current="page" href="">Unsplash</a>
+                    <a @click.prevent="" class="nav-link nav-link-1 active" aria-current="page" href="">Unsplash</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-2" href="">Rick & Morty</a>
+                    <a @click.prevent="" class="nav-link nav-link-2" href="">Rick & Morty</a>
                 </li>
             </ul>
             </div>

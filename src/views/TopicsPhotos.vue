@@ -1,7 +1,18 @@
 <template>
       <!--Main content  -->
-      <section class="grid">
-        <div v-if="query.trim() === '' && topics.length" class=" row container-fluid mt-3 text-center">
+      <section class="container mt-3">
+        <form class="d-flex" @submit.prevent="onSubmit">
+        <input class="form-control me-3"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          v-model="query"
+          @input="onInput"
+        />
+        <!-- <button class="btn btn-mod card-button btn-border btn-circle btn-large" type="submit">Search</button> -->
+      </form>
+      <br>
+        <div v-if="query.trim() === '' && topics.length" class=" row container-fluid  text-center">
             <div class="row mb-4 pt-5 mt-4 ">
                 <h2 class="col-6 tm-text-primary ">
                   Photos of {{slug}}
