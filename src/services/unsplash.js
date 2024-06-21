@@ -7,7 +7,7 @@ const unsplashApi = axios.create({
   }
 });
 
-export const searchPhotos = (query, page = 1, perPage = 6) => {
+export const searchPhotos = (query, page = 1, perPage = 10) => {
   return unsplashApi.get('/search/photos', {
     params: {
       query: query,
@@ -17,11 +17,19 @@ export const searchPhotos = (query, page = 1, perPage = 6) => {
   });
 };
 
-export const getcollections = ( page = 1, perPage = 9) => {
-  return unsplashApi.get('/collections/', {
+export const gettopics = () => {
+  return unsplashApi.get('/topics', {
     params: {
-      page: page,
-      per_page: perPage
+      per_page: 10 // Adjust as needed
+    }
+  });
+};
+
+export const gettopicsPhotos = (slug) => {
+  return unsplashApi.get(`/topics/${slug}/photos/`, {
+    params: {
+      per_page: 10, // Adjust as needed
+      slug:slug
     }
   });
 };
