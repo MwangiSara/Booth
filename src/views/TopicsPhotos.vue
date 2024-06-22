@@ -1,21 +1,12 @@
 <template>
       <!--Main content  -->
-      <section class="container mt-3">
-        <form class="d-flex" @submit.prevent="onSubmit">
-        <input class="form-control me-3"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-          v-model="query"
-          @input="onInput"
-        />
-        <!-- <button class="btn btn-mod card-button btn-border btn-circle btn-large" type="submit">Search</button> -->
-      </form>
-      <br>
+      <section class="container-fluid ">
+        <div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll" style="">
+        </div>
         <div v-if="query.trim() === '' && topics.length" class=" row container-fluid  text-center">
-            <div class="row mb-4 pt-5 mt-4 ">
+            <div class="row mb-4 pt-1 ">
                 <h2 class="col-6 tm-text-primary ">
-                  Photos of {{slug}}
+                  Photos Of {{slug}} Topics
                 </h2>
             </div>
           <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5" v-for="topic in topics" :key="topic.id">
@@ -259,9 +250,36 @@
     position: relative;
     bottom: 15px;
     background-color: #fff;
-
-    /* box-shadow: 5px; */
   }
+  /* hero 1 and search bar css */
+.tm-hero {
+    min-height: 200px !important;
+    background-image: url('../assets/images/sanddune2.jpg') !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.align-items-center {
+    align-items: center !important;
+}
+.justify-content-center {
+    justify-content: center !important;
+}
+.tm-search-input {
+    width: 360px !important;
+    border-radius: 0 !important;
+    padding: 12px 15px !important;
+    color: #009999 !important;
+    border: none !important;
+}
+.tm-search-btn {
+    color: white !important;
+    background-color: #009999 !important;
+    border: none !important;
+    width: 100px !important;
+    height: 50px !important;
+    margin-left: -1px !important;
+}
   
   </style>
   

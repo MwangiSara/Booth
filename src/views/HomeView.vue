@@ -1,16 +1,18 @@
 <template>
-   <div class="container mt-3">
-      <form class="d-flex" @submit.prevent="onSubmit">
-        <input class="form-control me-3"
+   <div class="container-fluid mt-3">
+    <div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll" style="">
+      <form class="d-flex  tm-search-form" @submit.prevent="onSubmit">
+        <input class="form-control tm-search-input"
           type="search"
-          placeholder="Search"
+          placeholder="Search For Amazing Photos..."
           aria-label="Search"
           v-model="query"
           @input="onInput"
         />
         <!-- <button class="btn btn-mod card-button btn-border btn-circle btn-large" type="submit">Search</button> -->
       </form>
-      <br><br>
+    </div>
+    
       <div v-if="loading" class="mt-4 text-center">
       <p style="font-size: 30px; color: #009999">Loading topics, please wait...</p>
       </div>
@@ -304,5 +306,33 @@ export default {
 
     /* box-shadow: 5px; */
   }
-
+/* hero 1 and search bar css */
+.tm-hero {
+    min-height: 200px !important;
+    background-image: url('../assets/images/sanddune2.jpg') !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.align-items-center {
+    align-items: center !important;
+}
+.justify-content-center {
+    justify-content: center !important;
+}
+.tm-search-input {
+    width: 360px !important;
+    border-radius: 0 !important;
+    padding: 12px 15px !important;
+    color: #009999 !important;
+    border: none !important;
+}
+.tm-search-btn {
+    color: white !important;
+    background-color: #009999 !important;
+    border: none !important;
+    width: 100px !important;
+    height: 50px !important;
+    margin-left: -1px !important;
+}
 </style>

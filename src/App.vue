@@ -1,13 +1,12 @@
 <template>
 <section class="home ">
-      <!-- header -->
-       
+<!-- navbar start -->
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <router-link  class="navbar-brand" :to="{ name : 'home'}" >
                 <i class="fas fa-film mr-2"></i>
                 BOOTH
-            </a>
+            </router-link>
             <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-expanded="false">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -15,30 +14,25 @@
             <div class="navbar-collapse collapse" id="navbarCollapse" style="">
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a @click.prevent="" class="nav-link nav-link-1 active" aria-current="page" href="">Unsplash</a>
+                    <router-link :to="{ name : 'home'}"   class="nav-link nav-link-1 active" aria-current="page" href="">Unsplash</router-link>
                 </li>
                 <li class="nav-item">
-                    <a @click.prevent="" class="nav-link nav-link-2" href="">Rick & Morty</a>
+                    <router-link :to="{ name : 'home'}"  class="nav-link nav-link-2" href="">Rick & Morty</router-link>
                 </li>
             </ul>
             </div>
         </div>
     </nav>
-      <section class="header ">
-        
-        <br>
-        <br>
-        <router-view/>
-        
+<!-- navbar start -->
+<!-- Main content start -->
+      <section class="main">
+         <router-view/>   
       </section>
-      <!--Main content  -->
-      <section class="grid">
-        
+<!-- Main content end -->
+<!-- footer start -->
+      <section class="footer">   
       </section>
-      <!-- footer -->
-      <section class="footer">
-        
-      </section>
+<!-- footer start -->
   </section>
   
 </template>
