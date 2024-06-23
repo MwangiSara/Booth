@@ -127,7 +127,7 @@
   }
 };
   </script>
-  <style>
+  <style scoped>
 
   .btn-mod.btn-large {
       height: auto;

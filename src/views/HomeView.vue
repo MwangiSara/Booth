@@ -1,4 +1,5 @@
 <template>
+  <!-- hero start -->
    <div class="container-fluid mt-3">
     <div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll" style="">
       <form class="d-flex  tm-search-form" @submit.prevent="onSubmit">
@@ -12,11 +13,12 @@
         <!-- <button class="btn btn-mod card-button btn-border btn-circle btn-large" type="submit">Search</button> -->
       </form>
     </div>
-    
+  <!-- hero end -->
+  <!-- main cotent start -->
       <div v-if="loading" class="mt-4 text-center">
       <p style="font-size: 30px; color: #009999">Loading topics, please wait...</p>
       </div>
-  
+  <!-- search photos start -->
       <div v-if="!loading && query.trim() !== ''" class="mt-4">
           <div v-if="photos.length === 0" class="row mb-4 container-fluid ">
                   <h2 class="col-6 tm-text-primary">
@@ -50,13 +52,15 @@
         </div>
         
       </div>
+  <!-- search photos end -->
+  <!-- topics start -->
       <div v-if="query.trim() === '' && topics.length" class=" topics mt-4">
         <h2 class="col-6 tm-text-primary">
                 Topics
               </h2>
         <div class="row">
           
-              <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5" v-for="topics in topics" :key="topics.id">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5" v-for="topics in topics" :key="topics.id">
               <div class="card card-sl mb-4 tm-video-item">
                   <div class="image-fluid">
                       <img :src="topics.cover_photo.urls.full" class="card-img-top " :alt="topics.description" height="200">
@@ -80,7 +84,9 @@
                   <a v-on:click="changePage(currentPage - 1)" :disabled="currentPage === totalPages" class="tm-btn-next">Next Page</a>
               </div> 
       </div>
+  <!-- topics end -->
     </div>
+  <!-- main content end -->
 </template>
 
 <script>
@@ -188,7 +194,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .btn-mod.btn-large {
       height: auto;
       padding: 10px 30px;

@@ -17,7 +17,7 @@
                     <router-link :to="{ name : 'home'}"   class="nav-link nav-link-1 active" aria-current="page" href="">Unsplash</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link :to="{ name : 'home'}"  class="nav-link nav-link-2" href="">Rick & Morty</router-link>
+                    <router-link :to="{ name : 'RickMortyHome'}"  class="nav-link nav-link-2 active" href="">Rick & Morty</router-link>
                 </li>
             </ul>
             </div>
@@ -95,7 +95,7 @@
     border-color: #33CCFF !important;
 }
 .nav-link-2.active, .nav-link-2:hover {
-    border-color: #FF6666 !important;
+    border-color: #53A535 !important;
 }
 .nav-link-3.active, .nav-link-3:hover {
     border-color: #33CC66 !important;
