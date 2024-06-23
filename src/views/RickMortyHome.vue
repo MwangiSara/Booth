@@ -91,10 +91,11 @@
   <style scoped>
  /* hero 1 and search bar css */
 .tm-hero {
-    min-height: 350px !important;
+    min-height: 200px !important;
     background-image: url('../assets/images/rickandmorty2.jpg') !important;
     background-repeat: no-repeat;
     background-position: center;
+    background-position-y: -250px;
     background-size: cover;
 }
 .align-items-center {
@@ -135,12 +136,12 @@
   }
   .btn-mod.btn-border {
       color: #000;
-      border: 2px solid #E26D5C;
+      border: 2px solid #077B3C;
       background: transparent;
   }
   .btn-mod:hover, .btn-mod:focus, a.btn-mod:hover, a.btn-mod:focus {
       font-weight: 400;
-      color: #E26D5C;
+      color: #077B3C;
       background: #000;
       text-decoration: none;
       outline: none;
@@ -217,13 +218,13 @@
   }
   .card-button:hover{
     text-decoration: none !important;
-    background-color: #E26D5C!important;
+    background-color: #077B3C!important;
     color: #fff !important;
   }
   .card-action{
-    border: 2px solid #E26D5C;
+    border: 2px solid #077B3C;
     border-radius: 300px;
-    color: #E26D5C;
+    color: #077B3C;
     width: 44px !important;
     align-content: left !important; 
     margin-left: 4px;

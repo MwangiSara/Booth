@@ -11,7 +11,6 @@
       <div v-if="loading" class="mt-4 text-center">
           <p style="font-size: 30px; color: #53A535">Error: {{ error }}</p>
       </div>
-      {{ name }}
     <div v-if="character" class="row">
       <div  class="col-md-7 col-sm-12 col-lg-7 px-3 d-flex flex-col justify-content-center align-items-center gap-2">
         <div class="card-block px-6">
@@ -75,10 +74,13 @@ export default {
           variables: {name: this.name }
         });
         const results = response.data.data.characters.results;
-        if (results.length > 0 ) {
-          this.character = results[1]
-          console.log(this.character)
-        } else {
+        for (let character of results) {
+          if (character.name === this.name) {
+            this.character = character;
+            break;
+          }
+        }
+        if (!this.character) {
           this.error = 'Character not found';
         }
       } catch (error) {
