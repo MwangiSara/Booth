@@ -5,7 +5,7 @@
         </div>
         <div v-if="query.trim() === '' && topics.length" class=" row container-fluid  text-center">
             <div class="row mb-4 pt-1 ">
-                <h2 class="col-6 tm-text-primary ">
+                <h2 class="col-12 tm-text-primary ">
                   Photos Of {{slug}} Topics
                 </h2>
             </div>

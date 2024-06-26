@@ -8,9 +8,10 @@
   <!-- main cotent start -->
     <div class="row">
       <div class="row mb-4">
-                <h2 class="col-6 tm-text-primary">
-                  Rick And Morty Characters
+                <h2 class="col-12 tm-text-primary">
+                  Characters
                 </h2>
+                <p class="col-12 text-muted">View All Rick And Morty Show Characters Though The Rick And Morty API</p>
         </div>
       <div v-if="loading" class="mt-4 text-center">
           <p style="font-size: 30px; color: #53A535">Loading Characters, please wait...</p>
@@ -52,13 +53,15 @@
         maxPagesToShow: 5,
         maxDescriptionLength: 20,
         maxtitleLength :15,
+        TotalPages: null,
+        pages: null,
       };
     },
     created() {
       this.fetchCharacters();
     },
     methods: {
-      async fetchCharacters() {
+      async fetchCharacters(page = 1) {
         try {
           this.loading = true;
           const response = await axios.post('https://rickandmortyapi.com/graphql', {
@@ -67,6 +70,9 @@
 
           });
           this.characters = response.data.data.characters.results;
+          this.TotalPages = response.data.data.characters.info.pages
+          
+          console.log(this.page)
         } catch (error) {
           this.error = error.message;
         } finally {
@@ -82,6 +88,9 @@
         if (!description) return 'No Description';
         if (description.length <= this.maxDescriptionLength) return description;
         return description.slice(0, this.maxDescriptionLength) + '...';
+      },
+      changePage(){
+
       }
     
     },
@@ -91,11 +100,10 @@
   <style scoped>
  /* hero 1 and search bar css */
 .tm-hero {
-    min-height: 200px !important;
+  min-height: 200px !important;
     background-image: url('../assets/images/rickandmorty2.jpg') !important;
     background-repeat: no-repeat;
     background-position: center;
-    background-position-y: -250px;
     background-size: cover;
 }
 .align-items-center {

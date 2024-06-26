@@ -7,11 +7,12 @@
                 <i class="fas fa-film mr-2"></i>
                 BOOTH
             </router-link>
-            <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-expanded="false">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-            
-            <div class="navbar-collapse collapse" id="navbarCollapse" style="">
+            <a @click="collapseNav">
+              <button class="navbar-toggler">
+              <span class="navbar-toggler-icon"></span>
+              </button>
+            </a>
+            <div class="navbar-collapse collapse" id="navbarCollapse" ref="nav_ref">
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <router-link :to="{ name : 'home'}"   class="nav-link nav-link-1 active" aria-current="page" href="">Unsplash</router-link>
@@ -31,11 +32,91 @@
 <!-- Main content end -->
 <!-- footer start -->
       <section class="footer">   
+        <footer class="text-center bg-body-tertiary">
+  <!-- Grid container -->
+  <div class="container pt-4">
+     <!--Grid row-->
+     <div class="row">
+      <!--Grid column-->
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Unsplash Documentation</h5>
+
+        <p class="text-muted">
+            This project utilizes the Unsplash API to access and display images. By using this API, you agree to adhere to the  <a href="https://unsplash.com/documentation">Unsplash API Documentation</a> and the <a href="https://help.unsplash.com/en/articles/2511245-unsplash-api-guidelines">Unsplash API Guidelines</a>. Please ensure you understand and comply with these guidelines to respect the rights of content creators and the terms of service of Unsplash.
+        </p>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Rick and Morty Documentation</h5>
+
+        <p class="text-muted">
+            This project utilizes the Rick and Morty GraphQL API to access and display data. By using this API, you agree to adhere to the <a href="https://rickandmortyapi.com/documentation/">Rick and Morty API Documentation</a> . Please ensure you understand and comply with the guidelines and terms of service provided in the documentation.
+        </p>
+      </div>
+      <!--Grid column-->
+    </div>
+    <!--Grid row-->
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      
+
+      <!-- Google -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-body m-1"
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=mwangisarah113@gmail.com"
+        role="button"
+        ><i class="fa fa-envelope" ></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-body m-1"
+        href="https://www.linkedin.com/in/sarah-mwangi/"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-linkedin"></i
+      ></a>
+      <!-- Github -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-body m-1"
+        href="https://github.com/MwangiSara/"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2024 Copyright:
+    <a class="text-body" href="https://sarahmwangi.netlify.app/">Sarah Wanjiru Mwangi</a>
+  </div>
+  <!-- Copyright -->
+</footer>
       </section>
 <!-- footer start -->
   </section>
   
 </template>
+
+<script>
+export default{
+  name: 'App',
+  data(){
+    return{}
+  },
+  methods:{
+    collapseNav(){
+      this.$refs.nav_ref.classList.toggle('show') 
+    }
+  }
+}
+</script>
 
 <style>
 #app {
@@ -125,7 +206,7 @@ li {
         top: 50px;
         right: 0px;
         background: white;
-        width: 150px;
+        width: 230px;
         padding: 15px;
     }}
 </style>

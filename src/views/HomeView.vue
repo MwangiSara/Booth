@@ -21,7 +21,7 @@
   <!-- search photos start -->
       <div v-if="!loading && query.trim() !== ''" class="mt-4">
           <div v-if="photos.length === 0" class="row mb-4 container-fluid ">
-                  <h2 class="col-6 tm-text-primary">
+                  <h2 class="col-12 tm-text-primary">
                       No photos related to the searched query
                   </h2>
             </div>
@@ -29,7 +29,7 @@
         <div v-else class="row container-fluid ">
           
           <div class="row mb-4">
-                <h2 class="col-6 tm-text-primary">
+                <h2 class="col-12 tm-text-primary">
                   Photos of {{query}}
                 </h2>
             </div>
@@ -55,9 +55,10 @@
   <!-- search photos end -->
   <!-- topics start -->
       <div v-if="query.trim() === '' && topics.length" class=" topics mt-4">
-        <h2 class="col-6 tm-text-primary">
+        <h2 class="col-12 tm-text-primary">
                 Topics
               </h2>
+              <p class="col-12 text-muted">Explore the world through topics of beautiful images free to use through the Unsplash API</p>
         <div class="row">
           
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5" v-for="topics in topics" :key="topics.id">
@@ -150,7 +151,7 @@ export default {
       searchPhotos(this.query, page)
         .then(response => {
           this.photos = response.data.results;
-          this.totalPages = Math.ceil(response.data.total / 10); // Assuming 10 items per page
+          this.totalPages = Math.ceil(response.data.total / 10); 
         })
         .catch(error => {
           console.error('Error fetching data:', error);

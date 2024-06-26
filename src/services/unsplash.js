@@ -20,7 +20,7 @@ export const searchPhotos = (query, page = 1, perPage = 10) => {
 export const gettopics = () => {
   return unsplashApi.get('/topics', {
     params: {
-      per_page: 10 // Adjust as needed
+      per_page: 10 
     }
   });
 };
@@ -28,7 +28,7 @@ export const gettopics = () => {
 export const gettopicsPhotos = (slug) => {
   return unsplashApi.get(`/topics/${slug}/photos/`, {
     params: {
-      per_page: 10, // Adjust as needed
+      per_page: 10,
       slug:slug
     }
   });

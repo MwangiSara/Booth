@@ -1,15 +1,15 @@
 <template>
  <div class="in_main">
-  <div class="container py-3" >
+  <div class="container py-5" >
   <!-- Card Start -->
    
-  <div class="card  mt-5 ">
+  <div class="cards  mt-5 mx-auto ">
     <!-- load -->
     <div v-if="loading" class="mt-4 text-center">
           <p style="font-size: 30px; color: #53A535">Loading Characters, please wait...</p>
       </div>
       <div v-if="loading" class="mt-4 text-center">
-          <p style="font-size: 30px; color: #53A535">Error: {{ error }}</p>
+          <p style="font-size: 30px; color: #53A535"> {{ error }}</p>
       </div>
     <div v-if="character" class="row">
       <div  class="col-md-7 col-sm-12 col-lg-7 px-3 d-flex flex-col justify-content-center align-items-center gap-2">
@@ -102,4 +102,13 @@ export default {
     background-size: cover;
     
 }
+.cards{
+  background-color: #ffffff !important;
+  width: 700px;
+}
+@media screen and (max-width: 600px){
+  .cards {
+    width: 300px;
+      }
+  }
 </style>
